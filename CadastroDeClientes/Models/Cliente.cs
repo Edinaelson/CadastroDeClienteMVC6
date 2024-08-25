@@ -25,6 +25,10 @@ namespace CadastroDeClientes.Models
         [StringLength(8, MinimumLength = 8)]
         public string? Cep { get; set; }
         
+        [Display(Name = "Cidade")]
+        [Column("Cidade")]
+        public string? Cidade { get; set; }
+        
         [Display(Name ="Rua")]
         [Column("Rua")]
         public string? Rua { get; set; }
