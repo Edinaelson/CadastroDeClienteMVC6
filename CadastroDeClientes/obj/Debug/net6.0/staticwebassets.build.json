@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "RBlrp2aRUICxgdanLUi0qGuauGc000ThE+B9hPj2og8=",
+  "Hash": "8OO2STyp+JUZpq4bSYREUBpHe5/TbUjyzPlXha+QSHA=",
   "Source": "CadastroDeClientes",
   "BasePath": "_content/CadastroDeClientes",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\dev\\CadastroDeClientes\\CadastroDeClientes\\wwwroot\\imagens\\clientes\\—Pngtree—spider man face shown on_15431569.png",
+      "SourceId": "CadastroDeClientes",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\dev\\CadastroDeClientes\\CadastroDeClientes\\wwwroot\\",
+      "BasePath": "_content/CadastroDeClientes",
+      "RelativePath": "imagens/clientes/—Pngtree—spider man face shown on_15431569.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imagens\\clientes\\—Pngtree—spider man face shown on_15431569.png"
     },
     {
       "Identity": "C:\\dev\\CadastroDeClientes\\CadastroDeClientes\\wwwroot\\js\\site.js",

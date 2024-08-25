@@ -47,6 +47,9 @@ namespace CadastroDeClientes.Migrations
                         .HasColumnType("longtext")
                         .HasColumnName("Ibge");
 
+                    b.Property<string>("ImagemCaminho")
+                        .HasColumnType("longtext");
+
                     b.Property<string>("Nome")
                         .HasMaxLength(100)
                         .HasColumnType("varchar(100)")

@@ -56,10 +56,43 @@ namespace CadastroDeClientes.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,Cnpj,Cep,Cidade,Rua,Bairro,Uf,Ibge")] Cliente cliente)
+        public async Task<IActionResult> Create([Bind("Id,Nome,Cnpj,Cep,Cidade,Rua,Bairro,Uf,Ibge")] Cliente cliente, IFormFile Imagem)
         {
             if (ModelState.IsValid)
             {
+
+                if (Imagem != null && Imagem.Length > 0)
+                {
+                    
+                    // Verifica se o arquivo é PNG
+                    var extensaoArquivo = Path.GetExtension(Imagem.FileName).ToLower();
+                    if (extensaoArquivo != ".png")
+                    {
+                        ModelState.AddModelError("ImagemCaminho", "Apenas arquivos PNG são permitidos.");
+                        return View(cliente);
+                    }
+                    
+                    // Definir o caminho onde a imagem será salva
+                    var caminhoPasta = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/imagens/clientes");
+                    var nomeArquivo = Path.GetFileName(Imagem.FileName);
+                    var caminhoCompleto = Path.Combine(caminhoPasta, nomeArquivo);
+                
+                    // Cria a pasta caso não exista
+                    if (!Directory.Exists(caminhoPasta))
+                    {
+                        Directory.CreateDirectory(caminhoPasta);
+                    }
+                    
+                    // Salvar a imagem no diretório especificado
+                    using (var stream = new FileStream(caminhoCompleto, FileMode.Create))
+                    {
+                        await Imagem.CopyToAsync(stream);
+                    }
+
+                    // Salvar o caminho da imagem no banco de dados
+                    cliente.ImagemCaminho = $"/imagens/clientes/{nomeArquivo}";
+                }
+                
                 _context.Add(cliente);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -88,7 +121,7 @@ namespace CadastroDeClientes.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Cnpj,Cep")] Cliente cliente)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Cnpj,Cep")] Cliente cliente, IFormFile imagem)
         {
             if (id != cliente.Id)
             {
@@ -99,6 +132,43 @@ namespace CadastroDeClientes.Controllers
             {
                 try
                 {
+                    if (imagem != null && imagem.Length > 0)
+                    {
+                        // Verifica se o arquivo é PNG
+                        var extensaoArquivo = Path.GetExtension(imagem.FileName).ToLower();
+                        if (extensaoArquivo != ".png")
+                        {
+                            ModelState.AddModelError("ImagemCaminho", "Apenas arquivos PNG são permitidos.");
+                            return View(cliente);
+                        }
+
+                        // Define o caminho onde a imagem será salva
+                        var caminhoPasta = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/imagens/clientes");
+                        var nomeArquivo = Path.GetFileName(imagem.FileName);
+                        var caminhoCompleto = Path.Combine(caminhoPasta, nomeArquivo);
+
+                        // Cria a pasta caso não exista
+                        if (!Directory.Exists(caminhoPasta))
+                        {
+                            Directory.CreateDirectory(caminhoPasta);
+                        }
+
+                        // Salva a imagem no diretório especificado
+                        using (var stream = new FileStream(caminhoCompleto, FileMode.Create))
+                        {
+                            await imagem.CopyToAsync(stream);
+                        }
+
+                        // Atualiza o caminho da imagem no cliente
+                        cliente.ImagemCaminho = $"/imagens/clientes/{nomeArquivo}";
+                    }
+                    else
+                    {
+                        // Caso nenhuma imagem seja enviada, mantenha o caminho atual
+                        var clienteAtual = await _context.Cliente.FindAsync(id);
+                        cliente.ImagemCaminho = clienteAtual.ImagemCaminho;
+                    }
+                    
                     _context.Update(cliente);
                     await _context.SaveChangesAsync();
                 }

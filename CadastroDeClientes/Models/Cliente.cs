@@ -44,6 +44,9 @@ namespace CadastroDeClientes.Models
         [Display(Name ="Ibge")]
         [Column("Ibge")]
         public string? Ibge { get; set; }
+        
+        [Display(Name = "Imagem")]
+        public string? ImagemCaminho { get; set; }
 
     }
 }

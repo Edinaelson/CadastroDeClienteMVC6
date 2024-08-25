@@ -9,24 +9,28 @@
 </p>
 <table class="table">
     <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nome)
-            </th>
-            
-            <th>
-                @Html.DisplayNameFor(model => model.Cnpj)
-            </th>
+    <tr>
+        <th>Imagem</th> <!-- Nova coluna para a imagem -->
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
 
-            <th>
-                @Html.DisplayNameFor(model => model.Cep)
-            </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cnpj)
+        </th>
 
-        </tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Cep)
+        </th>
+
+    </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+    @foreach (var item in Model) {
         <tr>
+            <td>
+                <img src="@item.ImagemCaminho" class="img-redonda" alt="Imagem do Cliente" />
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Nome)
             </td>
@@ -34,17 +38,26 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Cnpj)
             </td>
-            
+
             <td>
                 @Html.DisplayFor(modelItem => item.Cep)
             </td>
-            
+
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-success">Editar</a> |
                 <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">Detalhes</a> |
                 <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Deletar</a>
             </td>
         </tr>
-}
+    }
     </tbody>
 </table>
+<style>
+    .img-redonda {
+        width: 50px; /* Ajuste o tamanho conforme necessário */
+        height: 50px; /* Ajuste o tamanho conforme necessário */
+        border-radius: 50%; /* Torna a imagem redonda */
+        object-fit: cover; /* Garante que a imagem se ajuste ao contêiner sem distorções */
+        border: 2px solid #ccc; /* Opcional: adiciona uma borda */
+    }
+</style>
