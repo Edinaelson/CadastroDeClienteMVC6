@@ -56,7 +56,7 @@ namespace CadastroDeClientes.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,Cnpj,Cep,Rua,Bairro,Uf,Ibge")] Cliente cliente)
+        public async Task<IActionResult> Create([Bind("Id,Nome,Cnpj,Cep,Cidade,Rua,Bairro,Uf,Ibge")] Cliente cliente)
         {
             if (ModelState.IsValid)
             {
