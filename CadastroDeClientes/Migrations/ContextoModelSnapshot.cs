@@ -26,7 +26,8 @@ namespace CadastroDeClientes.Migrations
                         .HasColumnName("Id");
 
                     b.Property<string>("Bairro")
-                        .HasColumnType("longtext")
+                        .HasMaxLength(255)
+                        .HasColumnType("varchar(255)")
                         .HasColumnName("Bairro");
 
                     b.Property<string>("Cep")
@@ -44,7 +45,8 @@ namespace CadastroDeClientes.Migrations
                         .HasColumnName("CNPJ");
 
                     b.Property<string>("Ibge")
-                        .HasColumnType("longtext")
+                        .HasMaxLength(255)
+                        .HasColumnType("varchar(255)")
                         .HasColumnName("Ibge");
 
                     b.Property<string>("ImagemCaminho")
@@ -56,8 +58,13 @@ namespace CadastroDeClientes.Migrations
                         .HasColumnName("Nome");
 
                     b.Property<string>("Rua")
-                        .HasColumnType("longtext")
+                        .HasMaxLength(255)
+                        .HasColumnType("varchar(255)")
                         .HasColumnName("Rua");
+
+                    b.Property<string>("Segmento")
+                        .HasColumnType("longtext")
+                        .HasColumnName("Segmento");
 
                     b.Property<string>("Uf")
                         .HasColumnType("longtext")

@@ -13,8 +13,40 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\dev\\CadastroDeClientes\\CadastroDeClientes\\wwwroot\\imagens\\clientes\\Aqua.png",
+      "PackagePath": "staticwebassets\\imagens\\clientes\\Aqua.png"
+    },
+    {
+      "Id": "C:\\dev\\CadastroDeClientes\\CadastroDeClientes\\wwwroot\\imagens\\clientes\\B612_20201117_105425_978-Photoroom.png",
+      "PackagePath": "staticwebassets\\imagens\\clientes\\B612_20201117_105425_978-Photoroom.png"
+    },
+    {
+      "Id": "C:\\dev\\CadastroDeClientes\\CadastroDeClientes\\wwwroot\\imagens\\clientes\\IMG_20240513_081158_979.png",
+      "PackagePath": "staticwebassets\\imagens\\clientes\\IMG_20240513_081158_979.png"
+    },
+    {
+      "Id": "C:\\dev\\CadastroDeClientes\\CadastroDeClientes\\wwwroot\\imagens\\clientes\\Rudeos.png",
+      "PackagePath": "staticwebassets\\imagens\\clientes\\Rudeos.png"
+    },
+    {
+      "Id": "C:\\dev\\CadastroDeClientes\\CadastroDeClientes\\wwwroot\\imagens\\clientes\\alexandre.png",
+      "PackagePath": "staticwebassets\\imagens\\clientes\\alexandre.png"
+    },
+    {
+      "Id": "C:\\dev\\CadastroDeClientes\\CadastroDeClientes\\wwwroot\\imagens\\clientes\\anny.png",
+      "PackagePath": "staticwebassets\\imagens\\clientes\\anny.png"
+    },
+    {
+      "Id": "C:\\dev\\CadastroDeClientes\\CadastroDeClientes\\wwwroot\\imagens\\clientes\\maria.png",
+      "PackagePath": "staticwebassets\\imagens\\clientes\\maria.png"
+    },
+    {
       "Id": "C:\\dev\\CadastroDeClientes\\CadastroDeClientes\\wwwroot\\imagens\\clientes\\—Pngtree—spider man face shown on_15431569.png",
       "PackagePath": "staticwebassets\\imagens\\clientes\\—Pngtree—spider man face shown on_15431569.png"
+    },
+    {
+      "Id": "C:\\dev\\CadastroDeClientes\\CadastroDeClientes\\wwwroot\\imagens\\clientes\\—Pngtree—young anime boy with aggressive_14291607.png",
+      "PackagePath": "staticwebassets\\imagens\\clientes\\—Pngtree—young anime boy with aggressive_14291607.png"
     },
     {
       "Id": "C:\\dev\\CadastroDeClientes\\CadastroDeClientes\\wwwroot\\js\\site.js",

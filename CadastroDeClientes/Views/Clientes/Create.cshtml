@@ -36,6 +36,15 @@
                 <input asp-for="Cnpj" class="form-control" />
                 <span asp-validation-for="Cnpj" class="text-danger"></span>
             </div>
+
+            <div class="form-group">
+                <label asp-for="Segmento" class="control-label">Segmento</label>
+                <select asp-for="Segmento" class="form-control">
+                    <option>Comércio</option>
+                    <option>Serviço</option>
+                    <option>Industria</option>
+                </select>
+            </div>
             
             <!-- Adicionando Tabelas do cep-->
 
@@ -75,7 +84,7 @@
                 <input asp-for="Ibge" class="form-control" id="ibge" readonly/>
                 <span asp-validation-for="Ibge" class="text-danger"></span>
             </div>
-            </br>
+            <br>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>

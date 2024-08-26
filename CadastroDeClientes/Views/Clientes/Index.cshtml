@@ -20,7 +20,27 @@
         </th>
 
         <th>
+            @Html.DisplayNameFor(model => model.Segmento)
+        </th>
+
+        <th>
             @Html.DisplayNameFor(model => model.Cep)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.Cidade)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Rua)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Bairro)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Uf)
         </th>
 
     </tr>
@@ -38,14 +58,71 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Cnpj)
             </td>
+            
+            <td>
+                @if (item.Segmento == null)
+                {
+                <span>N/A</span>
+                }
+                else
+                {
+                @Html.DisplayFor(modelItem => item.Segmento)
+                }
+            </td>
 
             <td>
                 @Html.DisplayFor(modelItem => item.Cep)
             </td>
+            
+            <td>
+                @if (item.Cidade == null)
+                {
+                    <span>N/A</span>
+                }
+                else
+                {
+                    @Html.DisplayFor(modelItem => item.Cidade)
+                }
+            </td>
+
+            <td>
+                @if (item.Rua != null)
+                {
+                var truncatedRua = item.Rua.Length > 10 ? item.Rua.Substring(0, 10) + "..." : item.Rua;
+                @truncatedRua
+                }
+                else
+                {
+                <span>N/A</span>
+                }
+            </td>
+
+            <td>
+                @if (item.Bairro == null)
+                {
+                <span>N/A</span>
+                }
+                else
+                {
+                    @Html.DisplayFor(modelItem => item.Bairro)
+                }
+                
+            </td>
+
+            <td>
+                @if (item.Uf == null)
+                {
+                <span>N/A</span>
+                }
+                else
+                {
+                    @Html.DisplayFor(modelItem => item.Uf)
+                }
+            </td>
 
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-success">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">Detalhes</a> |
+                @* <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">Detalhes</a> | *@
                 <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Deletar</a>
             </td>
         </tr>

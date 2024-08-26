@@ -56,7 +56,7 @@ namespace CadastroDeClientes.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,Cnpj,Cep,Cidade,Rua,Bairro,Uf,Ibge")] Cliente cliente, IFormFile Imagem)
+        public async Task<IActionResult> Create([Bind("Id,Nome,Cnpj,Segmento,Cep,Cidade,Rua,Bairro,Uf,Ibge")] Cliente cliente, IFormFile Imagem)
         {
             if (ModelState.IsValid)
             {
@@ -121,7 +121,7 @@ namespace CadastroDeClientes.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Cnpj,Cep")] Cliente cliente, IFormFile imagem)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Cnpj,Segmento,Cep,Cidade,Rua,Bairro,Uf,Ibge")] Cliente cliente, IFormFile imagem)
         {
             if (id != cliente.Id)
             {

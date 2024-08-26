@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace CadastroDeClientes.Models
 {
@@ -20,6 +21,10 @@ namespace CadastroDeClientes.Models
         [StringLength(14, MinimumLength = 14)]
         public string? Cnpj { get; set; }
         
+        [Display(Name ="Segmento")]
+        [Column("Segmento")]
+        public string? Segmento { get; set; }
+        
         [Display(Name = "CEP")]
         [Column("Cep")]
         [StringLength(8, MinimumLength = 8)]
@@ -28,11 +33,12 @@ namespace CadastroDeClientes.Models
         [Display(Name = "Cidade")]
         [Column("Cidade")]
         public string? Cidade { get; set; }
-        
+        [StringLength(255, MinimumLength = 4)]
         [Display(Name ="Rua")]
         [Column("Rua")]
         public string? Rua { get; set; }
         
+        [StringLength(255, MinimumLength = 4)]
         [Display(Name ="Bairro")]
         [Column("Bairro")]
         public string? Bairro { get; set; }
@@ -41,6 +47,7 @@ namespace CadastroDeClientes.Models
         [Column("Uf")]
         public string? Uf { get; set; }
         
+        [StringLength(255, MinimumLength = 4)]
         [Display(Name ="Ibge")]
         [Column("Ibge")]
         public string? Ibge { get; set; }
