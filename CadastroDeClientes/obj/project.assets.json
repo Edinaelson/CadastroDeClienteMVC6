@@ -596,6 +596,29 @@
           }
         }
       },
+      "LigerShark.WebOptimizer.Core/3.0.426": {
+        "type": "package",
+        "dependencies": {
+          "NUglify": "1.21.9"
+        },
+        "compile": {
+          "lib/net6.0/WebOptimizer.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/WebOptimizer.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ],
+        "build": {
+          "build/LigerShark.WebOptimizer.Core.props": {},
+          "build/LigerShark.WebOptimizer.Core.targets": {}
+        }
+      },
       "MessagePack/2.1.152": {
         "type": "package",
         "dependencies": {
@@ -2050,6 +2073,19 @@
         },
         "runtime": {
           "lib/netstandard2.0/NuGet.Versioning.dll": {}
+        }
+      },
+      "NUglify/1.21.9": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/NUglify.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0/NUglify.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Pomelo.EntityFrameworkCore.MySql/6.0.0": {
@@ -4591,6 +4627,25 @@
         "logo.png"
       ]
     },
+    "LigerShark.WebOptimizer.Core/3.0.426": {
+      "sha512": "Mc4FFKL40n2f4ognnwDrvFxLt+2CdsovhCobaS8u2HXriS2OP8uMDwDIwmE2irlAW+HhR04a+wF1XImtFPxxRg==",
+      "type": "package",
+      "path": "ligershark.weboptimizer.core/3.0.426",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "build/LigerShark.WebOptimizer.Core.props",
+        "build/LigerShark.WebOptimizer.Core.targets",
+        "lib/net6.0/WebOptimizer.Core.dll",
+        "lib/net6.0/WebOptimizer.Core.xml",
+        "lib/net8.0/WebOptimizer.Core.dll",
+        "lib/net8.0/WebOptimizer.Core.xml",
+        "ligershark.weboptimizer.core.3.0.426.nupkg.sha512",
+        "ligershark.weboptimizer.core.nuspec",
+        "logo.png"
+      ]
+    },
     "MessagePack/2.1.152": {
       "sha512": "PlJ31qf42uGuJfwc61x/Pt4hJi01xh1rrBofj1MJSLzEot/2UAIRdSgxEHN/8qou5CV8OBeDM9HXKPi1Oj8rpQ==",
       "type": "package",
@@ -6786,6 +6841,28 @@
         "lib/netstandard2.0/NuGet.Versioning.dll",
         "nuget.versioning.6.9.1.nupkg.sha512",
         "nuget.versioning.nuspec"
+      ]
+    },
+    "NUglify/1.21.9": {
+      "sha512": "ULyI/scrIRAo2In6cnaCc/QkWUt+wB6pBVt5lrVddOKyamsCAm1XgArkk4px9tVn6SipjhbTt4M38QPlpoET+g==",
+      "type": "package",
+      "path": "nuglify/1.21.9",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35/NUglify.dll",
+        "lib/net35/NUglify.xml",
+        "lib/net40/NUglify.dll",
+        "lib/net40/NUglify.xml",
+        "lib/net5.0/NUglify.dll",
+        "lib/net5.0/NUglify.xml",
+        "lib/netstandard1.3/NUglify.dll",
+        "lib/netstandard1.3/NUglify.xml",
+        "lib/netstandard2.0/NUglify.dll",
+        "lib/netstandard2.0/NUglify.xml",
+        "nuglify.1.21.9.nupkg.sha512",
+        "nuglify.nuspec",
+        "nuglify.png"
       ]
     },
     "Pomelo.EntityFrameworkCore.MySql/6.0.0": {
@@ -10878,6 +10955,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "LigerShark.WebOptimizer.Core >= 3.0.426",
       "Microsoft.EntityFrameworkCore >= 6.0.33",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.32",
       "Microsoft.EntityFrameworkCore.Relational >= 6.0.33",
@@ -10928,6 +11006,10 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "LigerShark.WebOptimizer.Core": {
+            "target": "Package",
+            "version": "[3.0.426, )"
+          },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[6.0.33, )"

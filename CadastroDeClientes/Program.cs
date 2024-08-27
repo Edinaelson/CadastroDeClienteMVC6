@@ -9,7 +9,18 @@ namespace CadastroDeClientes
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
+            
+           //configurando agrupamento de arquivos staticos como css e javaScript
+
+           builder.Services.AddWebOptimizer(pipeline =>
+               {
+                   //nome do arquivo, arquivo01 + arquivo02
+                   pipeline.AddCssBundle("/css/bundle.css", "/lib/bootstrap/dist/css/bootstrap.css", "/css/site.css");
+                   pipeline.AddJavaScriptBundle("/js/bundle.js", "/lib/bootstrap/dist/js/bootstrap.js", "/js/site.js");
+
+                   pipeline.MinifyCssFiles();
+                   pipeline.MinifyJsFiles();
+               });
            
 
             //configurando conexao com o banco de dados
@@ -22,8 +33,8 @@ namespace CadastroDeClientes
 
             var app = builder.Build();
 
-            
-
+            //usando arquivos estaticos
+            app.UseWebOptimizer();
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {
